@@ -26,6 +26,7 @@ import java.math.BigDecimal;
 import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -231,13 +232,19 @@ public class PlaceOrderFormController {
 
     private void loadAllCustomerIds() {
         try {
-            Connection connection = DBConnection.getDbConnection().getConnection();
+            /*Connection connection = DBConnection.getDbConnection().getConnection();
             Statement stm = connection.createStatement();
-            ResultSet rst = stm.executeQuery("SELECT * FROM Customer");
+            ResultSet rst = stm.executeQuery("SELECT * FROM Customer");*/
 
-            while (rst.next()) {
-                cmbCustomerId.getItems().add(rst.getString("id"));
+            ArrayList<CustomerDTO> allCustomer = customerDAO.getAllCustomer();
+
+            for (CustomerDTO dto : allCustomer) {
+                cmbCustomerId.getItems().add(dto.getId());
             }
+
+            /*while (rst.next()) {
+                cmbCustomerId.getItems().add(rst.getString("id"));
+            }*/
 
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, "Failed to load customer ids").show();
@@ -249,12 +256,20 @@ public class PlaceOrderFormController {
     private void loadAllItemCodes() {
         try {
             /*Get all items*/
-            Connection connection = DBConnection.getDbConnection().getConnection();
+            /*Connection connection = DBConnection.getDbConnection().getConnection();
             Statement stm = connection.createStatement();
-            ResultSet rst = stm.executeQuery("SELECT * FROM Item");
-            while (rst.next()) {
-                cmbItemCode.getItems().add(rst.getString("code"));
+            ResultSet rst = stm.executeQuery("SELECT * FROM Item");*/
+
+            ArrayList<ItemDTO> allItems = itemDAO.loadAllItems();
+
+            for (ItemDTO itemDTO : allItems) {
+                cmbItemCode.getItems().add(itemDTO.getCode());
             }
+
+            /*while (rst.next()) {
+                cmbItemCode.getItems().add(rst.getString("code"));
+            }*/
+
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         } catch (ClassNotFoundException e) {
