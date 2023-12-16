@@ -6,8 +6,9 @@ import com.example.layeredarchitecture.model.ItemDTO;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class ItemDAOImpl {
+public class ItemDAOImpl implements ItemDAO{
 
+    @Override
     public ArrayList<ItemDTO> loadAllItems() throws SQLException, ClassNotFoundException {
         Connection connection = DBConnection.getDbConnection().getConnection();
         Statement stm = connection.createStatement();
@@ -29,6 +30,7 @@ public class ItemDAOImpl {
         return allItems;
     }
 
+    @Override
     public boolean saveItem(ItemDTO itemDTO) throws SQLException, ClassNotFoundException {
 
         Connection connection = DBConnection.getDbConnection().getConnection();
@@ -41,6 +43,7 @@ public class ItemDAOImpl {
         return pstm.executeUpdate() > 0;
     }
 
+    @Override
     public boolean updateItem(ItemDTO itemDTO) throws SQLException, ClassNotFoundException {
 
         Connection connection = DBConnection.getDbConnection().getConnection();
@@ -53,6 +56,7 @@ public class ItemDAOImpl {
         return pstm.executeUpdate() > 0;
     }
 
+    @Override
     public boolean exitItem(String code) throws SQLException, ClassNotFoundException {
         Connection connection = DBConnection.getDbConnection().getConnection();
         PreparedStatement pstm = connection.prepareStatement("SELECT code FROM Item WHERE code=?");
@@ -61,6 +65,7 @@ public class ItemDAOImpl {
         return pstm.executeQuery().next();
     }
 
+    @Override
     public boolean deleteItem(String id) throws SQLException, ClassNotFoundException {
         Connection connection = DBConnection.getDbConnection().getConnection();
         PreparedStatement pstm = connection.prepareStatement("DELETE FROM Item WHERE code=?");
@@ -68,6 +73,7 @@ public class ItemDAOImpl {
         return pstm.executeUpdate() > 0;
     }
 
+    @Override
     public ResultSet generateNewId() throws SQLException, ClassNotFoundException {
         Connection connection = DBConnection.getDbConnection().getConnection();
         ResultSet rst = connection.createStatement().executeQuery("SELECT code FROM Item ORDER BY code DESC LIMIT 1;");
