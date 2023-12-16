@@ -38,6 +38,8 @@ public class ManageItemsFormController {
     public TextField txtUnitPrice;
     public JFXButton btnAddNewItem;
 
+    ItemDAO itemDAO = new ItemDAOImpl(); //property injection
+
     public void initialize() {
         tblItems.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("code"));
         tblItems.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("description"));
@@ -73,7 +75,6 @@ public class ManageItemsFormController {
         try {
             /*Get all items*/
 
-            ItemDAO itemDAO = new ItemDAOImpl();
             ArrayList<ItemDTO> allItems = itemDAO.loadAllItems();
 
             for (ItemDTO itemDTO : allItems) {
@@ -148,7 +149,6 @@ public class ManageItemsFormController {
             pstm.setString(1, code);
             pstm.executeUpdate();*/
 
-            ItemDAO itemDAO = new ItemDAOImpl();
             boolean isDeleted = itemDAO.deleteItem(code);
 
             if (isDeleted) {
@@ -200,7 +200,6 @@ public class ManageItemsFormController {
                 pstm.setInt(4, qtyOnHand);
                 pstm.executeUpdate();*/
 
-                ItemDAO itemDAO = new ItemDAOImpl();
                 boolean isSaved = itemDAO.saveItem(new ItemDTO(code, description, unitPrice, qtyOnHand));
 
                 if (isSaved) {
@@ -226,7 +225,7 @@ public class ManageItemsFormController {
                 pstm.setInt(3, qtyOnHand);
                 pstm.setString(4, code);
                 pstm.executeUpdate();*/
-                ItemDAOImpl itemDAO = new ItemDAOImpl();
+
                 boolean isUpdated = itemDAO.updateItem(new ItemDTO(code, description, unitPrice, qtyOnHand));
 
                 if (isUpdated) {
@@ -254,7 +253,6 @@ public class ManageItemsFormController {
         pstm.setString(1, code);
         return pstm.executeQuery().next();*/
 
-        ItemDAO itemDAO = new ItemDAOImpl();
         return itemDAO.exitItem(code);
     }
 
@@ -263,7 +261,7 @@ public class ManageItemsFormController {
         try {
             /*Connection connection = DBConnection.getDbConnection().getConnection();
             ResultSet rst = connection.createStatement().executeQuery("SELECT code FROM Item ORDER BY code DESC LIMIT 1;");*/
-            ItemDAO itemDAO = new ItemDAOImpl();
+
             ResultSet resultSet = itemDAO.generateNewId();
 
             if (resultSet.next()) {
