@@ -1,11 +1,13 @@
 package com.example.layeredarchitecture.dao;
 
 import com.example.layeredarchitecture.db.DBConnection;
+import com.example.layeredarchitecture.model.ItemDTO;
+import com.example.layeredarchitecture.model.OrderDetailDTO;
+import com.example.layeredarchitecture.util.TransactionConnection;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.time.LocalDate;
+import java.util.List;
 
 public class OrderDAOImpl implements OrderDAO {
 
@@ -14,5 +16,35 @@ public class OrderDAOImpl implements OrderDAO {
         Connection connection = DBConnection.getDbConnection().getConnection();
         Statement stm = connection.createStatement();
         return stm.executeQuery("SELECT oid FROM `Orders` ORDER BY oid DESC LIMIT 1;");
+    }
+
+    @Override
+    public void selectOrderId(String orderId) throws SQLException, ClassNotFoundException {
+        Connection connection = TransactionConnection.setConnection();
+
+        PreparedStatement stm = connection.prepareStatement("SELECT oid FROM `Orders` WHERE oid=?");
+        stm.setString(1, orderId);
+        /*if order id already exist*/
+        if (stm.executeQuery().next()) {
+
+        }
+    }
+
+    @Override
+    public boolean saveOrder(String orderId, LocalDate orderDate, String customerId) throws SQLException {
+
+        Connection connection = TransactionConnection.setAutoCommitFalse();
+
+        PreparedStatement stm = connection.prepareStatement("INSERT INTO `Orders` (oid, date, customerID) VALUES (?,?,?)");
+        stm.setString(1, orderId);
+        stm.setDate(2, Date.valueOf(orderDate));
+        stm.setString(3, customerId);
+
+        if (stm.executeUpdate() != 1) {
+            connection.rollback();
+            TransactionConnection.setAutoCommitTrue();
+            return false;
+        }
+        return true;
     }
 }
