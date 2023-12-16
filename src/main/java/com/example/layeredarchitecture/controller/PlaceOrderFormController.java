@@ -2,6 +2,8 @@ package com.example.layeredarchitecture.controller;
 
 import com.example.layeredarchitecture.dao.CustomerDAO;
 import com.example.layeredarchitecture.dao.CustomerDAOImpl;
+import com.example.layeredarchitecture.dao.ItemDAO;
+import com.example.layeredarchitecture.dao.ItemDAOImpl;
 import com.example.layeredarchitecture.db.DBConnection;
 import com.example.layeredarchitecture.model.CustomerDTO;
 import com.example.layeredarchitecture.model.ItemDTO;
@@ -52,6 +54,7 @@ public class PlaceOrderFormController {
     private String orderId;
 
     CustomerDAO customerDAO = new CustomerDAOImpl();
+    ItemDAO itemDAO = new ItemDAOImpl();
 
     public void initialize() {
 
@@ -111,7 +114,10 @@ public class PlaceOrderFormController {
                         rst.next();*/
                         CustomerDTO dto = customerDAO.searchCustomer(newValue);
 
-                        CustomerDTO customerDTO = new CustomerDTO(newValue + "", dto.getName(), dto.getAddress());
+                        CustomerDTO customerDTO = new CustomerDTO(newValue + "",
+                                dto.getName(),
+                                dto.getAddress());
+
                         txtCustomerName.setText(customerDTO.getName());
 
                     } catch (SQLException e) {
@@ -138,12 +144,16 @@ public class PlaceOrderFormController {
                     if (!existItem(newItemCode + "")) {
 //                        throw new NotFoundException("There is no such item associated with the id " + code);
                     }
-                    Connection connection = DBConnection.getDbConnection().getConnection();
+                    /*Connection connection = DBConnection.getDbConnection().getConnection();
                     PreparedStatement pstm = connection.prepareStatement("SELECT * FROM Item WHERE code=?");
                     pstm.setString(1, newItemCode + "");
                     ResultSet rst = pstm.executeQuery();
-                    rst.next();
-                    ItemDTO item = new ItemDTO(newItemCode + "", rst.getString("description"), rst.getBigDecimal("unitPrice"), rst.getInt("qtyOnHand"));
+                    rst.next();*/
+                    ItemDTO dto = itemDAO.findItem(newItemCode);
+                    ItemDTO item = new ItemDTO(newItemCode + "",
+                            dto.getDescription(),
+                            dto.getUnitPrice(),
+                            dto.getQtyOnHand());
 
                     txtDescription.setText(item.getDescription());
                     txtUnitPrice.setText(item.getUnitPrice().setScale(2).toString());
