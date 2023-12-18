@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class SQLUtil {
 
-    public void execute(String sql, Object... arg) throws SQLException, ClassNotFoundException {
+    public static <T> T execute(String sql, Object... arg) throws SQLException, ClassNotFoundException {
         Connection connection = DBConnection.getDbConnection().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);
 
@@ -17,10 +17,10 @@ public class SQLUtil {
         }
 
         if (sql.startsWith("SELECT") || sql.startsWith("select")) {
-            pstm.executeQuery();
+            return (T)pstm.executeQuery();
         }
         else {
-            pstm.executeUpdate();
+            return (T)(Boolean)(pstm.executeUpdate()>0);
         }
     }
 }
