@@ -1,12 +1,13 @@
-package com.example.layeredarchitecture.dao;
+package com.example.layeredarchitecture.dao.custom.impl;
 
-import com.example.layeredarchitecture.db.DBConnection;
+import com.example.layeredarchitecture.dao.SQLUtil;
+import com.example.layeredarchitecture.dao.custom.ItemDAO;
 import com.example.layeredarchitecture.model.ItemDTO;
 
 import java.sql.*;
 import java.util.ArrayList;
 
-public class ItemDAOImpl implements ItemDAO{
+public class ItemDAOImpl implements ItemDAO {
 
     @Override
     public ArrayList<ItemDTO> loadAllItems() throws SQLException, ClassNotFoundException {
@@ -107,11 +108,14 @@ public class ItemDAOImpl implements ItemDAO{
         rst.next();*/
         ResultSet rst = SQLUtil.execute("SELECT * FROM Item WHERE code=?", newItemCode);
 
-        return new ItemDTO(
-                rst.getString(1),
-                rst.getString(2),
-                rst.getBigDecimal(3),
-                rst.getInt(4)
-        );
+        if (rst.next()) {
+           return new ItemDTO(
+                    rst.getString(1),
+                    rst.getString(2),
+                    rst.getBigDecimal(3),
+                    rst.getInt(4));
+        }
+
+        return null;
     }
 }

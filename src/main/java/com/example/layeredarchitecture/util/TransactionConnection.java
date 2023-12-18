@@ -9,19 +9,16 @@ public class TransactionConnection {
 
     private static Connection connection;
 
-    public static Connection setConnection() throws SQLException, ClassNotFoundException {
-        connection = DBConnection.getDbConnection().getConnection();
-        return connection;
+    static {
+        try {
+            connection = DBConnection.getDbConnection().getConnection();
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public static Connection setAutoCommitFalse() throws SQLException {
-        connection.setAutoCommit(false);
-        return connection;
-    }
-
-    public static Connection setAutoCommitTrue() throws SQLException {
-        connection.setAutoCommit(true);
-        return connection;
+    public static void rollBack() throws SQLException {
+        connection.rollback();
     }
 
     public static Connection getConnection() {

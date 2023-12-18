@@ -1,4 +1,4 @@
-package com.example.layeredarchitecture.dao;
+package com.example.layeredarchitecture.dao.custom;
 
 import com.example.layeredarchitecture.model.OrderDetailDTO;
 import com.example.layeredarchitecture.util.TransactionConnection;
@@ -13,5 +13,5 @@ public interface OrderDAO {
 
     void selectOrderId(String orderId) throws SQLException, ClassNotFoundException;
 
-    boolean saveOrder(String orderId, LocalDate orderDate, String customerId) throws SQLException;
+    boolean saveOrder(String orderId, LocalDate orderDate, String customerId) throws SQLException, ClassNotFoundException;
 }

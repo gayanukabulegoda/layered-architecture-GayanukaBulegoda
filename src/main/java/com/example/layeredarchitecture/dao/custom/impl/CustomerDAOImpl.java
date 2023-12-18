@@ -1,8 +1,8 @@
-package com.example.layeredarchitecture.dao;
+package com.example.layeredarchitecture.dao.custom.impl;
 
-import com.example.layeredarchitecture.db.DBConnection;
+import com.example.layeredarchitecture.dao.SQLUtil;
+import com.example.layeredarchitecture.dao.custom.CustomerDAO;
 import com.example.layeredarchitecture.model.CustomerDTO;
-import javafx.scene.control.Alert;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -100,10 +100,13 @@ public class CustomerDAOImpl implements CustomerDAO {
 
         ResultSet rst = SQLUtil.execute("SELECT * FROM Customer WHERE id=?", newValue);
 
-        return new CustomerDTO(
-                rst.getString(1),
-                rst.getString(2),
-                rst.getString(3)
-        );
+        if (rst.next()) {
+            return new CustomerDTO(
+                    rst.getString(1),
+                    rst.getString(2),
+                    rst.getString(3));
+        }
+
+        return null;
     }
 }
