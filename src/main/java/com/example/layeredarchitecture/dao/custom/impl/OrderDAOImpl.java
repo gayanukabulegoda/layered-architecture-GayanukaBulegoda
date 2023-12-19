@@ -2,6 +2,7 @@ package com.example.layeredarchitecture.dao.custom.impl;
 
 import com.example.layeredarchitecture.dao.SQLUtil;
 import com.example.layeredarchitecture.dao.custom.OrderDAO;
+import com.example.layeredarchitecture.model.OrderDTO;
 import com.example.layeredarchitecture.util.TransactionConnection;
 
 import java.sql.*;
@@ -10,7 +11,7 @@ import java.time.LocalDate;
 public class OrderDAOImpl implements OrderDAO {
 
     @Override
-    public ResultSet generateNewOrderId() throws SQLException, ClassNotFoundException {
+    public ResultSet generateNewId() throws SQLException, ClassNotFoundException {
         /*Connection connection = DBConnection.getDbConnection().getConnection();
         Statement stm = connection.createStatement();
         return stm.executeQuery("SELECT oid FROM `Orders` ORDER BY oid DESC LIMIT 1;");*/
@@ -32,7 +33,7 @@ public class OrderDAOImpl implements OrderDAO {
     }
 
     @Override
-    public boolean saveOrder(String orderId, LocalDate orderDate, String customerId) throws SQLException, ClassNotFoundException {
+    public boolean save(OrderDTO orderDTO) throws SQLException, ClassNotFoundException {
 
         /*Connection connection = TransactionConnection.setAutoCommitFalse();
 
@@ -41,9 +42,9 @@ public class OrderDAOImpl implements OrderDAO {
         stm.setDate(2, Date.valueOf(orderDate));
         stm.setString(3, customerId);*/
         boolean isExecuted = SQLUtil.execute("INSERT INTO `Orders` (oid, date, customerID) VALUES (?,?,?)",
-                orderId,
-                orderDate,
-                customerId
+                orderDTO.getOrderId(),
+                orderDTO.getOrderDate(),
+                orderDTO.getCustomerId()
         );
 
         if (!isExecuted) {

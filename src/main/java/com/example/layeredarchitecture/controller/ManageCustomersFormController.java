@@ -75,7 +75,7 @@ public class ManageCustomersFormController {
             Statement stm = connection.createStatement();
             ResultSet rst = stm.executeQuery("SELECT * FROM Customer");*/
 
-            ArrayList<CustomerDTO> allCustomer = customerDAO.getAllCustomer();
+            ArrayList<CustomerDTO> allCustomer = customerDAO.getAll();
 
             for (CustomerDTO dto : allCustomer) {
                 tblCustomers.getItems().add(
@@ -162,7 +162,7 @@ public class ManageCustomersFormController {
                 pstm.setString(3, address);
                 pstm.executeUpdate();*/
 
-                boolean isSaved = customerDAO.saveCustomer(new CustomerDTO(id, name, address));
+                boolean isSaved = customerDAO.save(new CustomerDTO(id, name, address));
 
                 if (isSaved) {
                     tblCustomers.getItems().add(new CustomerTM(id, name, address));
@@ -195,7 +195,7 @@ public class ManageCustomersFormController {
                 e.printStackTrace();
             }
 
-            boolean isUpdated = customerDAO.updateCustomer(new CustomerDTO(id, name, address));
+            boolean isUpdated = customerDAO.update(new CustomerDTO(id, name, address));
 
             if (isUpdated) {
                 CustomerTM selectedCustomer = tblCustomers.getSelectionModel().getSelectedItem();
@@ -214,7 +214,7 @@ public class ManageCustomersFormController {
         PreparedStatement pstm = connection.prepareStatement("SELECT id FROM Customer WHERE id=?");
         pstm.setString(1, id);*/
 
-        return customerDAO.existCustomer(id);
+        return customerDAO.exist(id);
     }
 
     public void btnDelete_OnAction(ActionEvent actionEvent) {
@@ -228,7 +228,7 @@ public class ManageCustomersFormController {
             PreparedStatement pstm = connection.prepareStatement("DELETE FROM Customer WHERE id=?");
             pstm.setString(1, id);
             pstm.executeUpdate();*/
-            boolean isDeleted = customerDAO.deleteCustomer(id);
+            boolean isDeleted = customerDAO.delete(id);
 
             if (isDeleted) {
                 tblCustomers.getItems().remove(tblCustomers.getSelectionModel().getSelectedItem());
