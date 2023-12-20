@@ -1,9 +1,10 @@
 package com.example.layeredarchitecture.model;
 
-/*
+/**
 * A CustomDTO Created (named CustomerOrder)
 * Inorder to set and get
-* Custom Query data via QueryDAOImpl*/
+* Custom Query data via QueryDAOImpl
+*/
 
 public class CustomerOrderDTO {
     private String id;

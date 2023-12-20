@@ -2,7 +2,6 @@ package com.example.layeredarchitecture.view.tdm;
 
 import java.math.BigDecimal;
 
-
 public class OrderDetailTM{
     private String code;
     private String description;

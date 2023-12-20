@@ -1,9 +1,7 @@
 package com.example.layeredarchitecture.dao.custom;
 
 import com.example.layeredarchitecture.dao.CrudDAO;
-import com.example.layeredarchitecture.db.DBConnection;
 import com.example.layeredarchitecture.model.CustomerDTO;
-import javafx.scene.control.Alert;
 
 import java.sql.*;
 import java.util.ArrayList;

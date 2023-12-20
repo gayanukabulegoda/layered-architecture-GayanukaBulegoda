@@ -1,7 +1,6 @@
 package com.example.layeredarchitecture.view.tdm;
 
 
-
 public class CustomerTM implements Comparable<CustomerTM> {
     private String id;
     private String name;

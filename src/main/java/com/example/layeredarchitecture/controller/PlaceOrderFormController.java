@@ -379,8 +379,6 @@ public class PlaceOrderFormController {
         boolean isOrderDetailSaved = false;
         boolean isItemUpdated = false;
 
-        Connection connection = TransactionConnection.getConnection();
-
         OrderDTO orderDTO = new OrderDTO();
         orderDTO.setOrderId(orderId);
         orderDTO.setOrderDate(orderDate);
@@ -389,13 +387,13 @@ public class PlaceOrderFormController {
         try {
             orderDAO.selectOrderId(orderId);
 
-            connection.setAutoCommit(false);
+            TransactionConnection.getConnection().setAutoCommit(false);
             isOrderSaved = orderDAO.save(orderDTO);
 
             for (OrderDetailDTO detail : orderDetails) {
                 isOrderDetailSaved = orderDetailDAO.save(orderId, detail);
 
-//                //Search & Update Item
+                //Search & Update Item
                 ItemDTO item = findItem(detail.getItemCode());
                 item.setQtyOnHand(item.getQtyOnHand() - detail.getQty());
 

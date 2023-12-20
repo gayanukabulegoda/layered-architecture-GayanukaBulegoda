@@ -6,7 +6,6 @@ import com.example.layeredarchitecture.model.OrderDTO;
 import com.example.layeredarchitecture.util.TransactionConnection;
 
 import java.sql.*;
-import java.time.LocalDate;
 
 public class OrderDAOImpl implements OrderDAO {
 
