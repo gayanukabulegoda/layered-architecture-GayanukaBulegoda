@@ -11,6 +11,9 @@ import com.example.layeredarchitecture.dto.ItemDTO;
 import com.example.layeredarchitecture.dto.OrderDTO;
 import com.example.layeredarchitecture.dto.OrderDetailDTO;
 import com.example.layeredarchitecture.entity.Customer;
+import com.example.layeredarchitecture.entity.Item;
+import com.example.layeredarchitecture.entity.Order;
+import com.example.layeredarchitecture.entity.OrderDetail;
 import com.example.layeredarchitecture.util.TransactionConnection;
 
 import java.sql.ResultSet;
@@ -34,24 +37,31 @@ public class PlaceOrderBOImpl implements PlaceOrderBO {
         boolean isOrderDetailSaved = false;
         boolean isItemUpdated = false;
 
-        OrderDTO orderDTO = new OrderDTO();
-        orderDTO.setOrderId(orderId);
-        orderDTO.setOrderDate(orderDate);
-        orderDTO.setCustomerId(customerId);
+        Order entity = new Order();
+        entity.setOrderId(orderId);
+        entity.setOrderDate(orderDate);
+        entity.setCustomerId(customerId);
 
         orderDAO.selectOrderId(orderId);
 
         TransactionConnection.getConnection().setAutoCommit(false);
-        isOrderSaved = orderDAO.save(orderDTO);
+        isOrderSaved = orderDAO.save(entity);
 
         for (OrderDetailDTO detail : orderDetails) {
-            isOrderDetailSaved = orderDetailDAO.save(orderId, detail);
+            isOrderDetailSaved = orderDetailDAO.save(orderId, new OrderDetail(
+                    detail.getItemCode(),
+                    detail.getQty(),
+                    detail.getUnitPrice()));
 
             //Search & Update Item
             ItemDTO item = findItem(detail.getItemCode());
             item.setQtyOnHand(item.getQtyOnHand() - detail.getQty());
 
-            isItemUpdated = itemDAO.update(item);
+            isItemUpdated = itemDAO.update(new Item(
+                    item.getCode(),
+                    item.getDescription(),
+                    item.getUnitPrice(),
+                    item.getQtyOnHand()));
         }
 
         if (isOrderSaved && isOrderDetailSaved && isItemUpdated) {
@@ -64,12 +74,12 @@ public class PlaceOrderBOImpl implements PlaceOrderBO {
 
     public ItemDTO findItem(String code) {
         try {
-            ItemDTO dto = itemDAO.search(code);
+            Item entity = itemDAO.search(code);
 
             return new ItemDTO(code,
-                    dto.getDescription(),
-                    dto.getUnitPrice(),
-                    dto.getQtyOnHand()
+                    entity.getDescription(),
+                    entity.getUnitPrice(),
+                    entity.getQtyOnHand()
             );
 
         } catch (SQLException e) {
@@ -93,7 +103,12 @@ public class PlaceOrderBOImpl implements PlaceOrderBO {
 
     @Override
     public ItemDTO searchItem(String newItemCode) throws SQLException, ClassNotFoundException {
-        return itemDAO.search(newItemCode);
+        Item item = itemDAO.search(newItemCode);
+        return new ItemDTO(
+                item.getCode(),
+                item.getDescription(),
+                item.getUnitPrice(),
+                item.getQtyOnHand());
     }
 
     @Override
@@ -117,14 +132,28 @@ public class PlaceOrderBOImpl implements PlaceOrderBO {
         ArrayList<CustomerDTO> customerDTOS = new ArrayList<>();
 
         for (Customer customer : customers) {
-
+            customerDTOS.add(new CustomerDTO(
+                    customer.getId(),
+                    customer.getName(),
+                    customer.getAddress()
+            ));
         }
-       // return customerDAO.getAll();
-        return null;
+        return customerDTOS;
     }
 
     @Override
     public ArrayList<ItemDTO> getAllItem() throws SQLException, ClassNotFoundException {
-        return itemDAO.getAll();
+        ArrayList<Item> items = itemDAO.getAll();
+        ArrayList<ItemDTO> itemDTOS = new ArrayList<>();
+
+        for (Item item : items) {
+            itemDTOS.add(new ItemDTO(
+                    item.getCode(),
+                    item.getDescription(),
+                    item.getUnitPrice(),
+                    item.getQtyOnHand()
+            ));
+        }
+        return itemDTOS;
     }
 }
