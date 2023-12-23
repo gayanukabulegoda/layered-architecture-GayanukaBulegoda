@@ -41,6 +41,7 @@ public class MainFormController {
     @FXML
     private Label lblDescription;
 
+    QueryDAOImpl queryDAO = new QueryDAOImpl();
 
     /**
      * Initializes the controller class.
@@ -124,7 +125,6 @@ public class MainFormController {
                     root = FXMLLoader.load(this.getClass().getResource("/com/example/layeredarchitecture/place-order-form.fxml"));
                     break;
                 case "imgViewOrders":
-                    QueryDAOImpl queryDAO = new QueryDAOImpl();
                     List<CustomerOrderDTO> customerOrderDTOS = queryDAO.customerOrderDetails();
 
                     System.out.print("+-------------+-----------------+------------------+--------------+");
