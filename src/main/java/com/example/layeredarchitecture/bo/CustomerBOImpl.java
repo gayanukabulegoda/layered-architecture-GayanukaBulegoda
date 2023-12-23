@@ -38,11 +38,6 @@ public class CustomerBOImpl implements CustomerBO{
     }
 
     @Override
-    public CustomerDTO searchCustomer(String newValue) throws SQLException, ClassNotFoundException {
-        return customerDAO.search(newValue);
-    }
-
-    @Override
     public ArrayList<CustomerDTO> getAllCustomer() throws SQLException, ClassNotFoundException {
         return customerDAO.getAll();
     }
