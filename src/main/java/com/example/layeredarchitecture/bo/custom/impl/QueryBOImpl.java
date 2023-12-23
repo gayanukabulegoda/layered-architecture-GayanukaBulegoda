@@ -3,7 +3,7 @@ package com.example.layeredarchitecture.bo.custom.impl;
 import com.example.layeredarchitecture.bo.custom.QueryBO;
 import com.example.layeredarchitecture.dao.DAOFactory;
 import com.example.layeredarchitecture.dao.custom.QueryDAO;
-import com.example.layeredarchitecture.model.CustomerOrderDTO;
+import com.example.layeredarchitecture.dto.CustomerOrderDTO;
 
 import java.sql.SQLException;
 import java.util.List;

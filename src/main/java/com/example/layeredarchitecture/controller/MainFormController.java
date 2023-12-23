@@ -2,7 +2,7 @@ package com.example.layeredarchitecture.controller;
 
 import com.example.layeredarchitecture.bo.BOFactory;
 import com.example.layeredarchitecture.bo.custom.QueryBO;
-import com.example.layeredarchitecture.model.CustomerOrderDTO;
+import com.example.layeredarchitecture.dto.CustomerOrderDTO;
 import javafx.animation.FadeTransition;
 import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;

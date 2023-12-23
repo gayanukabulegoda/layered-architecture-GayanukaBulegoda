@@ -1,4 +1,4 @@
-package com.example.layeredarchitecture.model;
+package com.example.layeredarchitecture.dto;
 
 /**
 * A CustomDTO Created (named CustomerOrder)
