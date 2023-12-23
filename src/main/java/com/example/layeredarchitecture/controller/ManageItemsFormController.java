@@ -77,7 +77,7 @@ public class ManageItemsFormController {
         try {
             /*Get all items*/
 
-            ArrayList<ItemDTO> allItems = itemBO.getAll();
+            ArrayList<ItemDTO> allItems = itemBO.getAllItem();
 
             for (ItemDTO itemDTO : allItems) {
                 tblItems.getItems().add(
@@ -151,7 +151,7 @@ public class ManageItemsFormController {
             pstm.setString(1, code);
             pstm.executeUpdate();*/
 
-            boolean isDeleted = itemBO.delete(code);
+            boolean isDeleted = itemBO.deleteItem(code);
 
             if (isDeleted) {
                 tblItems.getItems().remove(tblItems.getSelectionModel().getSelectedItem());
@@ -202,7 +202,7 @@ public class ManageItemsFormController {
                 pstm.setInt(4, qtyOnHand);
                 pstm.executeUpdate();*/
 
-                boolean isSaved = itemBO.save(new ItemDTO(code, description, unitPrice, qtyOnHand));
+                boolean isSaved = itemBO.saveItem(new ItemDTO(code, description, unitPrice, qtyOnHand));
 
                 if (isSaved) {
                     tblItems.getItems().add(new ItemTM(code, description, unitPrice, qtyOnHand));
@@ -228,7 +228,7 @@ public class ManageItemsFormController {
                 pstm.setString(4, code);
                 pstm.executeUpdate();*/
 
-                boolean isUpdated = itemBO.update(new ItemDTO(code, description, unitPrice, qtyOnHand));
+                boolean isUpdated = itemBO.updateItem(new ItemDTO(code, description, unitPrice, qtyOnHand));
 
                 if (isUpdated) {
                     ItemTM selectedItem = tblItems.getSelectionModel().getSelectedItem();
@@ -255,7 +255,7 @@ public class ManageItemsFormController {
         pstm.setString(1, code);
         return pstm.executeQuery().next();*/
 
-        return itemBO.exist(code);
+        return itemBO.existItem(code);
     }
 
 
@@ -264,7 +264,7 @@ public class ManageItemsFormController {
             /*Connection connection = DBConnection.getDbConnection().getConnection();
             ResultSet rst = connection.createStatement().executeQuery("SELECT code FROM Item ORDER BY code DESC LIMIT 1;");*/
 
-            ResultSet resultSet = itemBO.generateNewId();
+            ResultSet resultSet = itemBO.generateNewItemId();
 
             if (resultSet.next()) {
                 String id = resultSet.getString("code");
