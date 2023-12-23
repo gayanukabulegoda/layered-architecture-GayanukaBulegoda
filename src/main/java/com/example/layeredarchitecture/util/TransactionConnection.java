@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class TransactionConnection {
 
-    private static Connection connection;
+    private static final Connection connection;
 
     static {
         try {
