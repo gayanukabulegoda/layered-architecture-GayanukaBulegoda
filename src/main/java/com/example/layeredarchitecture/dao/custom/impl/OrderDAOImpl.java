@@ -3,6 +3,7 @@ package com.example.layeredarchitecture.dao.custom.impl;
 import com.example.layeredarchitecture.dao.SQLUtil;
 import com.example.layeredarchitecture.dao.custom.OrderDAO;
 import com.example.layeredarchitecture.dto.OrderDTO;
+import com.example.layeredarchitecture.entity.Order;
 import com.example.layeredarchitecture.util.TransactionConnection;
 
 import java.sql.*;
@@ -19,7 +20,7 @@ public class OrderDAOImpl implements OrderDAO {
     }
 
     @Override
-    public OrderDTO search(String newValue) throws SQLException, ClassNotFoundException {
+    public Order search(String newValue) throws SQLException, ClassNotFoundException {
         return null;
     }
 
@@ -38,7 +39,7 @@ public class OrderDAOImpl implements OrderDAO {
     }
 
     @Override
-    public boolean save(OrderDTO orderDTO) throws SQLException, ClassNotFoundException {
+    public boolean save(Order entity) throws SQLException, ClassNotFoundException {
 
         /*Connection connection = TransactionConnection.setAutoCommitFalse();
 
@@ -47,9 +48,9 @@ public class OrderDAOImpl implements OrderDAO {
         stm.setDate(2, Date.valueOf(orderDate));
         stm.setString(3, customerId);*/
         boolean isExecuted = SQLUtil.execute("INSERT INTO `Orders` (oid, date, customerID) VALUES (?,?,?)",
-                orderDTO.getOrderId(),
-                orderDTO.getOrderDate(),
-                orderDTO.getCustomerId()
+                entity.getOrderId(),
+                entity.getOrderDate(),
+                entity.getCustomerId()
         );
 
         if (!isExecuted) {
@@ -61,12 +62,12 @@ public class OrderDAOImpl implements OrderDAO {
     }
 
     @Override
-    public ArrayList<OrderDTO> getAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<Order> getAll() throws SQLException, ClassNotFoundException {
         return null;
     }
 
     @Override
-    public boolean update(OrderDTO dto) throws SQLException, ClassNotFoundException {
+    public boolean update(Order entity) throws SQLException, ClassNotFoundException {
         return false;
     }
 
