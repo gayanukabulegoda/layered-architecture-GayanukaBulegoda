@@ -4,10 +4,10 @@ module com.example.layeredarchitecture {
     requires com.jfoenix;
     requires java.sql;
 
-    opens com.example.layeredarchitecture to javafx.fxml;
-    opens com.example.layeredarchitecture.controller to javafx.fxml;
-    opens com.example.layeredarchitecture.view.tdm to javafx.base;
+    opens lk.grb.layeredarchitecture to javafx.fxml;
+    opens lk.grb.layeredarchitecture.controller to javafx.fxml;
+    opens lk.grb.layeredarchitecture.view.tdm to javafx.base;
 
-    exports com.example.layeredarchitecture;
-    exports com.example.layeredarchitecture.controller;
+    exports lk.grb.layeredarchitecture;
+    exports lk.grb.layeredarchitecture.controller;
 }
