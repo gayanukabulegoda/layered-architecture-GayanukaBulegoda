@@ -10,6 +10,7 @@ import com.example.layeredarchitecture.dto.CustomerDTO;
 import com.example.layeredarchitecture.dto.ItemDTO;
 import com.example.layeredarchitecture.dto.OrderDTO;
 import com.example.layeredarchitecture.dto.OrderDetailDTO;
+import com.example.layeredarchitecture.entity.Customer;
 import com.example.layeredarchitecture.util.TransactionConnection;
 
 import java.sql.ResultSet;
@@ -81,7 +82,13 @@ public class PlaceOrderBOImpl implements PlaceOrderBO {
 
     @Override
     public CustomerDTO searchCustomer(String newValue) throws SQLException, ClassNotFoundException {
-        return customerDAO.search(newValue);
+        Customer customer = customerDAO.search(newValue);
+        CustomerDTO customerDTO = new CustomerDTO(
+                customer.getId(),
+                customer.getName(),
+                customer.getAddress()
+        );
+        return customerDTO;
     }
 
     @Override
@@ -106,7 +113,14 @@ public class PlaceOrderBOImpl implements PlaceOrderBO {
 
     @Override
     public ArrayList<CustomerDTO> getAllCustomer() throws SQLException, ClassNotFoundException {
-        return customerDAO.getAll();
+        ArrayList<Customer> customers = customerDAO.getAll();
+        ArrayList<CustomerDTO> customerDTOS = new ArrayList<>();
+
+        for (Customer customer : customers) {
+
+        }
+       // return customerDAO.getAll();
+        return null;
     }
 
     @Override
