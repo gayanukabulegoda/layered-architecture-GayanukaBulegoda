@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="donor" prefHeight="595.0" prefWidth="955.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.blood.controller.DonorFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f6f8" layoutY="13.0" stroke="#f4f6f8" strokeType="INSIDE" width="1116.0" />
+      <ImageView fitHeight="510.0" fitWidth="552.0" layoutX="514.0" layoutY="85.0" opacity="0.67">
+         <image>
+            <Image url="@../Image/WhatsApp%20Image%202023-11-11%20at%2020.28.37.jpeg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="52.0" layoutY="99.0">
+         <children>
+            <TextField fx:id="txtFirstName" layoutX="5.0" layoutY="16.94921875" opacity="0.4" prefHeight="25.0" prefWidth="264.0" promptText="First Name" />
+            <TextField fx:id="txtLastName" layoutX="5.0" layoutY="74.94921875" opacity="0.4" prefHeight="25.0" prefWidth="264.0" promptText="Last Name" />
+            <TextField fx:id="txtTel" layoutX="3.0" layoutY="314.94921875" opacity="0.4" prefHeight="25.0" prefWidth="156.0" promptText="tel" />
+            <TextField fx:id="txtId" layoutX="3.0" layoutY="131.94921875" opacity="0.4" prefHeight="25.0" prefWidth="156.0" promptText="Donor Id" />
+            <TextField fx:id="txtType" layoutX="1.0" layoutY="254.94921875" opacity="0.4" prefHeight="25.0" prefWidth="156.0" promptText="Blood Type" />
+            <Text layoutX="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="5.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="6.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donor Id">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Of Birth">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="6.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tel">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="4.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blood Type">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="190.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Donation Date">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <DatePicker fx:id="txtDob" layoutX="2.0" layoutY="187.0" prefHeight="25.0" prefWidth="156.0" />
+            <DatePicker fx:id="txtL_date" layoutX="162.0" layoutY="315.0" prefHeight="25.0" prefWidth="150.0" />
+         </children>
+      </Pane>
+      <Button layoutX="290.0" layoutY="482.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: B50404;" text="Search" textFill="#fff8f8">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="418.0" layoutY="482.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: B50404;" text="Delete" textFill="#fff8f8">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="165.0" layoutY="482.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: B50404;" text="Update" textFill="#fff8f8">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="41.0" layoutY="482.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: B50404;" text="Save" textFill="#fff8f8">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="830.0" layoutY="555.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: B50404;" text="Back" textFill="#fff8f8">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tblDonor" layoutX="447.0" layoutY="42.0" prefHeight="410.0" prefWidth="504.0">
+        <columns>
+          <TableColumn fx:id="colDonorid" prefWidth="116.800048828125" text="Name" />
+          <TableColumn fx:id="colName" prefWidth="111.99993896484375" text="Name" />
+            <TableColumn fx:id="colDob" prefWidth="130.4000244140625" text="Date Of Birth" />
+            <TableColumn fx:id="colType" prefWidth="147.199951171875" text="Blood Type" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

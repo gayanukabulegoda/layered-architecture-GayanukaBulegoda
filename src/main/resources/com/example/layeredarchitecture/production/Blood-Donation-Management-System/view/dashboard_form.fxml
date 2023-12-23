@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="dashboard" prefHeight="595.0" prefWidth="1074.0" style="-fx-background-image: WhatsApp Image 2023-11-11 at 20.28.37; (1).jpeg;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.blood.controller.DashboardFormController">
+   <children>
+      <Button layoutX="27.0" layoutY="46.0" mnemonicParsing="false" onAction="#btnDashboardOnAction" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: FF3800;" text="DashBoard" textFill="#f8f3f3">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="27.0" layoutY="107.0" mnemonicParsing="false" onAction="#btnUserOnAction" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: FF3800;" text="User" textFill="#fcf9f9">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="27.0" layoutY="168.0" mnemonicParsing="false" onAction="#btnDonorOnAction" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: FF3800;" text="Donor" textFill="#fffdfd">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="27.0" layoutY="232.0" mnemonicParsing="false" onAction="#btnDonationOnAction" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: FF3800;" text="Donation" textFill="#fffdfd">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="27.0" layoutY="294.0" mnemonicParsing="false" onAction="#btnEmployeeOnAction" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: FF3800;" text="Employee" textFill="#fcfafa">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="27.0" layoutY="422.0" mnemonicParsing="false" onAction="#btnNeederOnAction" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: FF3800;" text="Needer" textFill="#f2ecec">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="27.0" layoutY="358.0" mnemonicParsing="false" onAction="#btnSupplierOnAction" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: FF3800;" text="Supplier" textFill="#eeeaea">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="27.0" layoutY="488.0" mnemonicParsing="false" onAction="#btnInventoryOnAction" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: FF3800;" text="Inventory" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Text fill="#d00e0e" layoutX="14.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ru Blood Donation">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="144.0" layoutY="2.0">
+         <image>
+            <Image url="@../Image/img.png" />
+         </image>
+      </ImageView>
+      <CategoryAxis layoutX="10.0" layoutY="10.0" side="BOTTOM" />
+      <NumberAxis side="LEFT" />
+      <AnchorPane fx:id="bodyPane" layoutX="144.0" layoutY="37.0" prefHeight="559.0" prefWidth="930.0" />
+   </children>
+</AnchorPane>

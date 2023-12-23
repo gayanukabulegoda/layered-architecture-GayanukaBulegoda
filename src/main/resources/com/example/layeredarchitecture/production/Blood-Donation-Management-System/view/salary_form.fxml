@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="Salary" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.blood.controller.SalaryFormController">
+   <children>
+      <Text fill="#d00e0e" layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ru Blood Donation">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="143.0" layoutY="2.0">
+         <image>
+            <Image url="@../Image/img.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="26.0" layoutY="48.0" prefHeight="376.0" prefWidth="313.0">
+         <children>
+            <TextField fx:id="txtSalaryId" layoutX="14.0" layoutY="40.0" prefHeight="25.0" prefWidth="244.0" promptText="Salary Id" />
+            <TextField fx:id="txtEmpId" layoutX="14.0" layoutY="98.0" prefHeight="25.0" prefWidth="244.0" promptText="Emp Id" />
+            <TextField fx:id="txtAmount" layoutX="14.0" layoutY="155.0" prefHeight="25.0" prefWidth="244.0" promptText="Amount" />
+            <TextField fx:id="txtMonth" layoutX="14.0" layoutY="220.0" prefHeight="25.0" prefWidth="244.0" promptText="Month" />
+            <TextField fx:id="txtYear" layoutX="14.0" layoutY="283.0" prefHeight="25.0" prefWidth="244.0" promptText="Year" />
+            <Text layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salary Id">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Emp Id">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Month">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Button layoutX="13.0" layoutY="328.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: B50404;" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="101.0" layoutY="328.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: B50404;" text="Update" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="188.0" layoutY="328.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: B50404;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <ImageView fitHeight="339.0" fitWidth="404.0" layoutX="347.0" layoutY="111.0" opacity="0.67">
+         <image>
+            <Image url="@../Image/WhatsApp%20Image%202023-11-11%20at%2020.28.37.jpeg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblSalary" layoutX="333.0" layoutY="57.0" opacity="0.65" prefHeight="358.0" prefWidth="379.0">
+        <columns>
+          <TableColumn fx:id="colSalaryId" prefWidth="75.0" text="SalaryId" />
+          <TableColumn fx:id="colEmpId" prefWidth="75.0" text="EmpId" />
+            <TableColumn fx:id="colAmount" prefWidth="75.0" text="Amount" />
+            <TableColumn fx:id="colMonth" prefWidth="75.0" text="Month" />
+            <TableColumn fx:id="colYear" prefWidth="75.0" text="Year" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="653.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.blood.controller.dashboardmain_formController">
+   <children>
+      <AnchorPane fx:id="bodyPane" layoutX="3.0" prefHeight="653.0" prefWidth="1050.0" style="-fx-background-image: Blood-distribution-types-final.jpg; -fx-background-image: blood-grouping6.png.jpg.png;">
+         <children>
+            <ImageView fitHeight="238.0" fitWidth="239.0" layoutX="481.0" layoutY="34.0">
+               <image>
+                  <Image url="@../Image/Blood-distribution-types-final.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="181.0" fitWidth="335.0" layoutX="378.0" layoutY="338.0">
+               <image>
+                  <Image url="@../Image/360_F_506963368_AxcCpAOxw7zOS6dkb9vR4GjWacoSh2Zw.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="238.0" fitWidth="253.0" layoutX="757.0" layoutY="34.0">
+               <image>
+                  <Image url="@../Image/blood-grouping6.png.jpg.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="331.0" fitWidth="329.0" layoutX="687.0" layoutY="316.0">
+               <image>
+                  <Image url="@../Image/WhatsApp%20Image%202023-11-11%20at%2020.28.37.jpeg" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <Rectangle arcHeight="5.0" fill="#fe0000" height="51.0" layoutX="123.0" layoutY="152.0" stroke="#fe0000" strokeType="INSIDE" width="74.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fe0000" height="51.0" layoutX="209.0" layoutY="152.0" stroke="#fe0000" strokeType="INSIDE" width="74.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fe0000" height="51.0" layoutX="380.0" layoutY="221.0" stroke="#fe0000" strokeType="INSIDE" width="74.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fe0000" height="51.0" layoutX="294.0" layoutY="221.0" stroke="#fe0000" strokeType="INSIDE" width="74.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fe0000" height="51.0" layoutX="209.0" layoutY="221.0" stroke="#fe0000" strokeType="INSIDE" width="74.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fe0000" height="51.0" layoutX="123.0" layoutY="221.0" stroke="#fe0000" strokeType="INSIDE" width="74.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fe0000" height="51.0" layoutX="294.0" layoutY="152.0" stroke="#fe0000" strokeType="INSIDE" width="74.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fe0000" height="51.0" layoutX="380.0" layoutY="152.0" stroke="#fe0000" strokeType="INSIDE" width="74.0" />
+      <Text fill="#fcf6f6" layoutX="129.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A+" wrappingWidth="41.13671875">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#fcf6f6" layoutX="218.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="B+" wrappingWidth="41.13671875">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#fcf6f6" layoutX="301.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AB+" wrappingWidth="41.13671875">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#fcf6f6" layoutX="389.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O+" wrappingWidth="41.13671875">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#fcf6f6" layoutX="129.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A-" wrappingWidth="41.13671875">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#fcf6f6" layoutX="218.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="B-" wrappingWidth="41.13671875">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#fcf6f6" layoutX="301.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AB-" wrappingWidth="41.13671875">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#fcf6f6" layoutX="389.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O-" wrappingWidth="41.13671875">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#f8f7f7" layoutX="134.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 Pouches">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Text>
+      <Text fill="#f8f7f7" layoutX="134.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 Pouches">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Text>
+      <Text fill="#f8f7f7" layoutX="390.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 Pouches">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Text>
+      <Text fill="#f8f7f7" layoutX="304.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 Pouches">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Text>
+      <Text fill="#f8f7f7" layoutX="220.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 Pouches">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Text>
+      <Text fill="#f8f7f7" layoutX="390.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 Pouches">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Text>
+      <Text fill="#f8f7f7" layoutX="305.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 Pouches">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Text>
+      <Text fill="#f8f7f7" layoutX="220.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 Pouches">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Text>
+      <Text fill="#ff0800" layoutX="212.0" layoutY="558.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You Can Help Save Someone's Life." wrappingWidth="378.4951171875">
+         <font>
+            <Font name="System Bold Italic" size="23.0" />
+         </font>
+      </Text>
+      <Text fill="#fe0000" layoutX="70.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <Text fill="#fe0000" layoutX="128.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blood Details" wrappingWidth="187.38980102539062">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Text>
+      <Text fill="#fe0000" layoutX="128.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blood Status">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fe0000" height="34.0" layoutX="123.0" layoutY="336.0" opacity="0.59" stroke="#fe0000" strokeType="INSIDE" width="89.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fe0000" height="34.0" layoutX="228.0" layoutY="383.0" opacity="0.64" stroke="#fe0000" strokeType="INSIDE" width="89.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fe0000" height="34.0" layoutX="123.0" layoutY="383.0" opacity="0.66" stroke="#fe0000" strokeType="INSIDE" width="89.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fe0000" height="34.0" layoutX="228.0" layoutY="336.0" opacity="0.68" stroke="#fe0000" strokeType="INSIDE" width="89.0" />
+      <Text fill="#f5efef" layoutX="127.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Donors">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#f5efef" layoutX="235.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Achive Blood">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#f5efef" layoutX="124.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expire Blood">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#f5efef" layoutX="234.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Unit">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#f8f1f1" layoutX="257.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#f8f1f1" layoutX="250.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#f8f1f1" layoutX="150.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#f8f1f1" layoutX="150.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

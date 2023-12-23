@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="RequestDetails" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.blood.controller.RequestDetailsFormController">
+   <children>
+      <Text fill="#bf0404" layoutX="22.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ru Blood Donation">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="146.0" layoutY="8.0">
+         <image>
+            <Image url="@../Image/img.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="37.0" layoutY="97.0" prefHeight="301.0" prefWidth="272.0">
+         <children>
+            <TextField fx:id="txtNeederId" layoutX="14.0" layoutY="43.0" prefHeight="25.0" prefWidth="209.0" promptText="Needer_Id" />
+            <TextField fx:id="txtBloodBagId" layoutX="14.0" layoutY="111.0" prefHeight="25.0" prefWidth="209.0" promptText="BloodBagId" />
+            <TextField fx:id="txtDescription" layoutX="17.0" layoutY="174.0" prefHeight="25.0" prefWidth="209.0" promptText="Description" />
+            <Text layoutX="17.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Needer_Id">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="17.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BloodBag_Id">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Button layoutX="39.0" layoutY="234.0" mnemonicParsing="false" onAction="#btnSaveOnAction" onDragDetected="#btnSaveOnAction" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: B50404;" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="153.0" layoutY="234.0" mnemonicParsing="false" onAction="#btnSaveOnAction" onDragDetected="#btnDeleteOnAction" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: B50404;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <TableView fx:id="tblRequestDetails" layoutX="398.0" layoutY="174.0" prefHeight="200.0" prefWidth="298.0">
+        <columns>
+          <TableColumn fx:id="colNeederId" prefWidth="90.0" text="NeederId" />
+          <TableColumn fx:id="colBloodBagId" prefWidth="103.0" text="BloodBagId" />
+            <TableColumn fx:id="colDescription" prefWidth="103.0" text="Description" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="267.0" fitWidth="332.0" layoutX="404.0" layoutY="183.0" opacity="0.67">
+         <image>
+            <Image url="@../Image/WhatsApp%20Image%202023-11-11%20at%2020.28.37.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="129.0" fitWidth="266.0" layoutX="452.0" layoutY="11.0">
+         <image>
+            <Image url="@../Image/download(3).png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

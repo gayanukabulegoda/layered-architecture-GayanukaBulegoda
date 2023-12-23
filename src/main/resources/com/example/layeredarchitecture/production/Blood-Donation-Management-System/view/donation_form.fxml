@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="donation" prefHeight="595.0" prefWidth="955.0" style="-fx-background-color: FE0000;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.blood.controller.DonationFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f6f8" height="595.0" layoutX="-6.0" stroke="#f4f6f8" strokeType="INSIDE" width="961.0" />
+      <Pane layoutX="72.0" layoutY="112.0" prefHeight="352.0" prefWidth="284.0">
+         <children>
+            <TextField fx:id="txtDoId" layoutY="25.0" opacity="0.42" prefHeight="25.0" prefWidth="239.0" promptText="Donation Id" />
+            <TextField fx:id="txtBloodType" layoutX="4.0" layoutY="231.0" opacity="0.42" prefHeight="25.0" prefWidth="239.0" promptText="Blood Type" />
+            <Text layoutX="2.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donation Id">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="2.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donor Id">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="11.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hemoglobin Level">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="4.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blood Type">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Button layoutX="-25.0" layoutY="358.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: B50404;" text="Save" textFill="#fff8f8">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="114.0" layoutY="358.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: B50404;" text="Search" textFill="#fff8f8">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="245.0" layoutY="358.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: B50404;" text="Delete" textFill="#fff8f8">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <DatePicker fx:id="txtDate" layoutY="164.0" prefHeight="25.0" prefWidth="239.0" promptText="Date" />
+            <TextField fx:id="txtHemoglobinLevel" layoutX="-3.0" layoutY="293.0" opacity="0.42" prefHeight="25.0" prefWidth="239.0" promptText="Himoglobin Level" />
+            <ComboBox fx:id="cmbDonorid" layoutY="89.0" prefHeight="25.0" prefWidth="239.0" />
+         </children>
+      </Pane>
+      <Button layoutX="821.0" layoutY="548.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: B50404;" text="Back" textFill="#fff8f8">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="371.0" fitWidth="377.0" layoutX="433.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/LOGIN.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblDonation" layoutX="418.0" layoutY="94.0" opacity="0.79" prefHeight="430.0" prefWidth="519.0">
+         <columns>
+            <TableColumn fx:id="colDonationId" prefWidth="90.0" text="DonationId" />
+            <TableColumn fx:id="colDonorId" prefWidth="105.0" text="DonorId" />
+            <TableColumn fx:id="colDate" prefWidth="135.0" text="Date" />
+            <TableColumn fx:id="colBloodType" prefWidth="105.0" text="BloodType" />
+            <TableColumn fx:id="colHemoglobinLevel" prefWidth="83.0" text="HemoglobinLevel" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

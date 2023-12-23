@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.blood.controller.LoginFormController">
+   <children>
+      <AnchorPane prefHeight="614.0" prefWidth="1114.0" style="-fx-background-color: #D1D1D1; -fx-background-image: download(3).png; -fx-background-image: download(2).png;">
+         <children>
+            <Pane layoutX="20.0" layoutY="14.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" cache="true" cacheHint="SPEED" fill="#f2f8ff" focusTraversable="true" height="445.0" layoutX="2.0" layoutY="1.0" mouseTransparent="true" opacity="0.5" stroke="#f50202" strokeDashOffset="10.0" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeMiterLimit="20.0" width="315.0">
+                     <effect>
+                        <BoxBlur height="0.0" width="0.0" />
+                     </effect>
+                  </Rectangle>
+                  <TextField fx:id="txtId" layoutX="28.5" layoutY="192.5" opacity="0.49" prefHeight="31.0" prefWidth="214.0" promptText="Enter User Id" />
+                  <TextField fx:id="txtPassword" layoutX="28.5" layoutY="268.5" opacity="0.33" prefHeight="31.0" prefWidth="214.0" promptText="Enter Password" />
+                  <Text layoutX="13.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Glad you’re back.!" />
+                  <Text layoutX="30.5" layoutY="183.5" strokeType="OUTSIDE" strokeWidth="0.0" text="* User Id" />
+                  <Text layoutX="31.5" layoutY="260.5" strokeType="OUTSIDE" strokeWidth="0.0" text="* Password" />
+                  <Text layoutX="64.5" layoutY="402.529296875" strokeType="OUTSIDE" strokeWidth="0.0" text="Don’t have an account ? " textAlignment="CENTER">
+                     <font>
+                        <Font name="Candara" size="11.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="94.5" layoutY="331.5" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: B50404;" text="Login" textFill="#fff8f8">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Text layoutX="-2.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  Login">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="62.0" fitWidth="75.0" layoutX="7.0" layoutY="27.0">
+                     <image>
+                        <Image url="@../Image/img.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton layoutX="187.5" layoutY="383.5" onAction="#btnSignupOnAction" prefHeight="26.0" prefWidth="57.0" style="-fx-border-color: BLACK;" text="Sign Up">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </JFXButton>
+                  <Text fill="#d00e0e" layoutX="101.0" layoutY="64.0" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" text="Ru Blood Donation">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Text fill="RED" layoutX="583.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donate Blood , Save a Life ," wrappingWidth="451.546875">
+               <font>
+                  <Font name="System Bold Italic" size="34.0" />
+               </font>
+            </Text>
+            <Text fill="RED" layoutX="687.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Give a Hope .">
+               <font>
+                  <Font name="System Bold Italic" size="34.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="413.0" fitWidth="478.0" layoutX="666.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/LOGIN.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="245.0" fitWidth="680.0" layoutX="44.0" layoutY="371.0">
+               <image>
+                  <Image url="@../Image/download(3).png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

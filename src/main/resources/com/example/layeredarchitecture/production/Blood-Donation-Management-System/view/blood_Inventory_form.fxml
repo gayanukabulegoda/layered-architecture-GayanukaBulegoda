@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="inventoryPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.blood.controller.BloodInventoryFormController">
+   <children>
+      <Pane layoutX="14.0" layoutY="52.0" prefHeight="384.0" prefWidth="295.0">
+         <children>
+            <TextField fx:id="txtBloodBag_id" layoutX="22.0" layoutY="45.0" prefHeight="25.0" prefWidth="214.0" />
+            <TextField fx:id="txtDonation_id" layoutX="22.0" layoutY="107.0" prefHeight="25.0" prefWidth="214.0" />
+            <TextField fx:id="txtBlood_Type" layoutX="22.0" layoutY="298.0" prefHeight="25.0" prefWidth="214.0" />
+            <DatePicker fx:id="txtDonation_Date" layoutX="22.0" layoutY="169.0" prefHeight="25.0" prefWidth="214.0" />
+            <DatePicker fx:id="txtEx_Date" layoutX="22.0" layoutY="233.0" prefHeight="25.0" prefWidth="214.0" />
+            <Text layoutX="22.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BloodBag_id">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="22.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donation_id">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="24.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donation_Date">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="24.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ex_Date">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="24.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blood_Type">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Button layoutX="101.0" layoutY="345.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" style="-fx-background-color: B50404;" text="Update" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="201.0" layoutY="345.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: B50404;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="11.0" layoutY="345.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: B50404;" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <ImageView fitHeight="348.0" fitWidth="408.0" layoutX="336.0" layoutY="102.0" opacity="0.67">
+         <image>
+            <Image url="@../Image/WhatsApp%20Image%202023-11-11%20at%2020.28.37.jpeg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblBlood_Inventory" layoutX="309.0" layoutY="128.0" opacity="0.55" prefHeight="232.0" prefWidth="420.0">
+         <columns>
+            <TableColumn fx:id="colBloodBag_id" prefWidth="75.0" text="BloodBag_id" />
+            <TableColumn fx:id="colDonation_id" prefWidth="75.0" text="Donation_id" />
+            <TableColumn fx:id="colDonationDate" prefWidth="102.0" text="Donation_Date" />
+            <TableColumn fx:id="colEx_Date" prefWidth="85.0" text="Ex_Date" />
+            <TableColumn fx:id="colBlood_Type" prefWidth="85.0" text="Blood_Type" />
+         </columns>
+      </TableView>
+      <ImageView fitHeight="113.0" fitWidth="262.0" layoutX="474.0" layoutY="7.0">
+         <image>
+            <Image url="@../Image/download(3).png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
