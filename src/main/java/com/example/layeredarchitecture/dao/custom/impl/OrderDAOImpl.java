@@ -6,6 +6,7 @@ import com.example.layeredarchitecture.model.OrderDTO;
 import com.example.layeredarchitecture.util.TransactionConnection;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class OrderDAOImpl implements OrderDAO {
 
@@ -15,6 +16,11 @@ public class OrderDAOImpl implements OrderDAO {
         Statement stm = connection.createStatement();
         return stm.executeQuery("SELECT oid FROM `Orders` ORDER BY oid DESC LIMIT 1;");*/
         return SQLUtil.execute("SELECT oid FROM `Orders` ORDER BY oid DESC LIMIT 1;");
+    }
+
+    @Override
+    public OrderDTO search(String newValue) throws SQLException, ClassNotFoundException {
+        return null;
     }
 
     @Override
@@ -52,5 +58,25 @@ public class OrderDAOImpl implements OrderDAO {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public ArrayList<OrderDTO> getAll() throws SQLException, ClassNotFoundException {
+        return null;
+    }
+
+    @Override
+    public boolean update(OrderDTO dto) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean exist(String id) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean delete(String id) throws SQLException, ClassNotFoundException {
+        return false;
     }
 }
