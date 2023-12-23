@@ -1,6 +1,7 @@
 package com.example.layeredarchitecture.controller;
 
-import com.example.layeredarchitecture.dao.custom.impl.QueryDAOImpl;
+import com.example.layeredarchitecture.bo.BOFactory;
+import com.example.layeredarchitecture.bo.custom.QueryBO;
 import com.example.layeredarchitecture.model.CustomerOrderDTO;
 import javafx.animation.FadeTransition;
 import javafx.animation.ScaleTransition;
@@ -41,7 +42,7 @@ public class MainFormController {
     @FXML
     private Label lblDescription;
 
-    QueryDAOImpl queryDAO = new QueryDAOImpl();
+    QueryBO queryBO = (QueryBO) BOFactory.getBoFactory().getTypes(BOFactory.BOTypes.QUERY);
 
     /**
      * Initializes the controller class.
@@ -125,7 +126,7 @@ public class MainFormController {
                     root = FXMLLoader.load(this.getClass().getResource("/com/example/layeredarchitecture/place-order-form.fxml"));
                     break;
                 case "imgViewOrders":
-                    List<CustomerOrderDTO> customerOrderDTOS = queryDAO.customerOrderDetails();
+                    List<CustomerOrderDTO> customerOrderDTOS = queryBO.customerOrderDetails();
 
                     System.out.print("+-------------+-----------------+------------------+--------------+");
                     for (CustomerOrderDTO dto : customerOrderDTOS) {
