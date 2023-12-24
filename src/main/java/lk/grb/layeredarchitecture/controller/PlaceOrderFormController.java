@@ -1,6 +1,6 @@
 package lk.grb.layeredarchitecture.controller;
 
-import com.example.layeredarchitecture.bo.*;
+import lk.grb.layeredarchitecture.bo.*;
 import lk.grb.layeredarchitecture.bo.custom.PlaceOrderBO;
 import lk.grb.layeredarchitecture.dto.CustomerDTO;
 import lk.grb.layeredarchitecture.dto.ItemDTO;

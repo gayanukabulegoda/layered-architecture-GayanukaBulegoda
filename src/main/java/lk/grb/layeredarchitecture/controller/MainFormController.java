@@ -2,6 +2,7 @@ package lk.grb.layeredarchitecture.controller;
 
 import lk.grb.layeredarchitecture.bo.BOFactory;
 import lk.grb.layeredarchitecture.bo.custom.QueryBO;
+import lk.grb.layeredarchitecture.dao.custom.impl.QueryDAOImpl;
 import lk.grb.layeredarchitecture.dto.CustomerOrderDTO;
 import javafx.animation.FadeTransition;
 import javafx.animation.ScaleTransition;
@@ -126,6 +127,8 @@ public class MainFormController {
                     root = FXMLLoader.load(this.getClass().getResource("/lk/grb/layeredarchitecture/place-order-form.fxml"));
                     break;
                 case "imgViewOrders":
+                    QueryDAOImpl queryDAO = new QueryDAOImpl();
+                    List<CustomerOrderDTO> customerOrderDTOS1 = queryDAO.customerOrderDetails();
                     List<CustomerOrderDTO> customerOrderDTOS = queryBO.customerOrderDetails();
 
                     System.out.print("+-------------+-----------------+------------------+--------------+");
